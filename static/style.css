@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #FAFAFA;
+    color: #222222;
+    line-height: 1.5;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 26px;
+    color: #222222;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #666666;
+    font-size: 14px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.inline-range {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #4C9F70;
+    background: #EAF5EE;
+    padding: 2px 6px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+input, select {
+    padding: 10px 12px;
+    border: 1.5px solid #DDDDDD;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+    font-family: inherit;
+    background: white;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4C9F70;
+}
+
+.bmi-display {
+    background: #EAF5EE;
+    border: 1px solid #4C9F70;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2E6B47;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bmi-display.out-of-range {
+    background: #FDF2F3;
+    border-color: #D1495B;
+    color: #A5303F;
+}
+
+.default-note {
+    font-size: 12.5px;
+    color: #888888;
+    background: #F5F5F5;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 3px solid #4C9F70;
+}
+
+button#submitBtn {
+    width: 100%;
+    padding: 13px;
+    background-color: #4C9F70;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button#submitBtn:hover {
+    background-color: #3d8259;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-section {
+    margin-top: 30px;
+    animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-card {
+    border-radius: 12px;
+    padding: 25px;
+    border: 1.5px solid #EEEEEE;
+}
+
+.result-card.diabetic {
+    background-color: #FDF2F3;
+    border-color: #D1495B;
+}
+
+.result-card.non-diabetic {
+    background-color: #F1F8F4;
+    border-color: #4C9F70;
+}
+
+#resultLabel {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.result-card.diabetic #resultLabel {
+    color: #D1495B;
+}
+
+.result-card.non-diabetic #resultLabel {
+    color: #4C9F70;
+}
+
+.probability-bar-container {
+    width: 100%;
+    height: 18px;
+    background: #EEEEEE;
+    border-radius: 9px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.probability-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #4C9F70, #D1495B);
+    transition: width 0.5s ease;
+}
+
+.probability-text {
+    font-size: 13.5px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.risk-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.risk-tag {
+    background: white;
+    border: 1px solid #DDDDDD;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.risk-tag .label {
+    font-size: 11px;
+    color: #888888;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.risk-tag .value {
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #333333;
+}
+
+.contributions-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.contribution-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #F0F0F0;
+    font-size: 13.5px;
+    gap: 10px;
+}
+
+.contribution-item .feature-name {
+    flex: 1;
+}
+
+.contribution-item .feature-value {
+    color: #888888;
+    font-size: 12px;
+}
+
+.contribution-bar-mini {
+    width: 80px;
+    height: 8px;
+    border-radius: 4px;
+    background: #EEEEEE;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.contribution-bar-mini .fill {
+    height: 100%;
+}
+
+.error-section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #FDF2F3;
+    border: 1px solid #D1495B;
+    border-radius: 8px;
+    color: #D1495B;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .risk-categories { grid-template-columns: 1fr; }
+}

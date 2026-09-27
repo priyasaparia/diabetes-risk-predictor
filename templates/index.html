@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diabetes Risk Predictor</h1>
+            <p class="subtitle">Enter your health metrics below for an instant risk assessment</p>
+        </header>
+
+        <form id="predictionForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="Glucose">Glucose (mg/dl) <span class="inline-range">44 – 199</span></label>
+                    <input type="number" id="Glucose" name="Glucose" step="0.1" required
+                           min="44" max="199" placeholder="e.g. 120">
+                </div>
+
+                <div class="form-group">
+                    <label for="BloodPressure">Blood Pressure — Diastolic (mm/Hg) <span class="inline-range">24 – 122</span></label>
+                    <input type="number" id="BloodPressure" name="BloodPressure" step="1" required
+                           min="24" max="122" placeholder="e.g. 80">
+                </div>
+
+                <div class="form-group">
+                    <label for="Height">Height (cm) <span class="inline-range">100 – 250</span></label>
+                    <input type="number" id="Height" name="Height" step="0.1" required
+                           min="100" max="250" placeholder="e.g. 170">
+                </div>
+
+                <div class="form-group">
+                    <label for="Weight">Weight (kg) <span class="inline-range">20 – 250</span></label>
+                    <input type="number" id="Weight" name="Weight" step="0.1" required
+                           min="20" max="250" placeholder="e.g. 65">
+                </div>
+
+                <div class="form-group">
+                    <label for="Age">Age (years) <span class="inline-range">1 – 100</span></label>
+                    <input type="number" id="Age" name="Age" step="1" required
+                           min="1" max="100" placeholder="e.g. 35">
+                </div>
+
+                <div class="form-group">
+                    <label for="Insulin">Insulin (mu U/ml) <span class="inline-range">1 – 200</span></label>
+                    <input type="number" id="Insulin" name="Insulin" step="0.1" required
+                           min="1" max="200" placeholder="e.g. 85">
+                </div>
+
+                <div class="form-group">
+                    <label for="Pregnancies">Pregnancies <span class="inline-range">0 – 20</span></label>
+                    <input type="number" id="Pregnancies" name="Pregnancies" step="1" required
+                           min="0" max="20" placeholder="e.g. 2">
+                </div>
+            </div>
+
+            <div id="bmiDisplay" class="bmi-display hidden">
+                Calculated BMI: <span id="bmiValue">--</span> kg/m² — <span id="bmiCategory">--</span>
+            </div>
+
+            <p class="default-note">
+                Note: Skin Thickness and Diabetes Pedigree Function are not collected here —
+                the model uses typical dataset-average values for these two fields automatically.
+            </p>
+
+            <button type="submit" id="submitBtn">Get Prediction</button>
+        </form>
+
+        <div id="resultSection" class="result-section hidden">
+            <div id="resultCard" class="result-card">
+                <h2 id="resultLabel"></h2>
+                <div class="probability-bar-container">
+                    <div id="probabilityBar" class="probability-bar"></div>
+                </div>
+                <p id="probabilityText" class="probability-text"></p>
+
+                <div class="risk-categories" id="riskCategories"></div>
+
+                <h3>What Drove This Prediction</h3>
+                <div id="contributionsList" class="contributions-list"></div>
+            </div>
+        </div>
+
+        <div id="errorSection" class="error-section hidden">
+            <p id="errorText"></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

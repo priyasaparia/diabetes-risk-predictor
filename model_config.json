@@ -1,0 +1,52 @@
+{
+  "feature_order": [
+    "Pregnancies",
+    "Glucose",
+    "BloodPressure",
+    "SkinThickness",
+    "Insulin",
+    "BMI",
+    "DiabetesPedigreeFunction",
+    "Age"
+  ],
+  "defaults": {
+    "Pregnancies": 3.0,
+    "Glucose": 117.0,
+    "BloodPressure": 72.0,
+    "SkinThickness": 28.0,
+    "Insulin": 102.5,
+    "BMI": 32.05,
+    "DiabetesPedigreeFunction": 0.3725,
+    "Age": 29.0
+  },
+  "means": {
+    "Pregnancies": 3.8450520833333335,
+    "Glucose": 121.67708333333333,
+    "BloodPressure": 72.38932291666667,
+    "SkinThickness": 29.08984375,
+    "Insulin": 141.75390625,
+    "BMI": 32.434635416666666,
+    "DiabetesPedigreeFunction": 0.47187630208333325,
+    "Age": 33.240885416666664
+  },
+  "stds": {
+    "Pregnancies": 3.3695780626988627,
+    "Glucose": 30.46416058912223,
+    "BloodPressure": 12.10603911745372,
+    "SkinThickness": 8.890819780938012,
+    "Insulin": 89.10084663622659,
+    "BMI": 6.880497796823625,
+    "DiabetesPedigreeFunction": 0.33132859501277484,
+    "Age": 11.76023154067868
+  },
+  "importances": {
+    "Pregnancies": 0.0595194473862648,
+    "Glucose": 0.0954962894320488,
+    "BloodPressure": 0.06271281838417053,
+    "SkinThickness": 0.09288576245307922,
+    "Insulin": 0.44839268922805786,
+    "BMI": 0.07759547233581543,
+    "DiabetesPedigreeFunction": 0.06191806495189667,
+    "Age": 0.10147947072982788
+  }
+}
